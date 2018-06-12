@@ -1,12 +1,12 @@
 import React from 'react';
 
-import './style.css';
+import classes from './style.css';
 
 const post = (props) => (
-    <article className="Post">
+    <article className={classes.Post}>
         <h1>Title</h1>
-        <div className="Info">
-            <div className="Author">Author</div>
+        <div className={classes.Info}>
+            <div className={classes.Author}>Author</div>
         </div>
     </article>
 );

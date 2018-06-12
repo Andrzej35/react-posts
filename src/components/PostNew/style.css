@@ -19,24 +19,25 @@
     display: block;
     width: 80%;
     box-sizing: border-box;
-    border: 1px solid black;
+    border: 1px solid darkgrey;
     outline: none;
     font: inherit;
     margin: auto;
+    padding:0.5% 1%;
 }
 
 .PostNew button {
-    margin: 5px 0;
+    margin: 10px 0;
     padding: 10px;
     font: inherit;
-    border: 1px solid #fa923f;
+    border: 1px solid #000;
     background-color: transparent;
-    color: #fa923f;
+    color: #000;
     cursor: pointer;
 }
 
 .PostNew button:hover,
 .PostNew button:active {
     color: white;
-    background-color: #fa923f;
+    background-color: #000;
 }

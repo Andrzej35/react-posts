@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
-import './style.css';
+import classes from './style.css'; 
 
 class PostSingle extends Component {
     render () {
         let post = <p>Please select a Post!</p>;
         post = (
-            <div className="Post">
+            <div className={classes.PostSingle}>
                 <h1>Title</h1>
                 <p>Content</p>
-                <div className="Edit">
-                    <button className="Delete">Delete</button>
+                <div className={classes.Edit}>
+                    <button className={classes.Delete}>Delete</button>
                 </div>
             </div>
 
