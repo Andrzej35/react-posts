@@ -4,9 +4,9 @@ import classes from './style.css';
 
 const post = (props) => (
     <article className={classes.Post}>
-        <h1>Title</h1>
+        <h3>{props.title}</h3>
         <div className={classes.Info}>
-            <div className={classes.Author}>Author</div>
+            <div className={classes.Author}>{props.author}</div>
         </div>
     </article>
 );
