@@ -8,12 +8,13 @@ import classes from './style.css';
 
 class Blog extends Component {
     state = {
-        posts: []
+        posts: [],
+        postId: null
     }
     componentDidMount() {
         axios.get('https://jsonplaceholder.typicode.com/posts')
             .then(res => {
-                const posts = res.data.slice(0, 4)
+                const posts = res.data.slice(0, 8)
                 const updatedPosts = posts.map(post => {
                     return {
                         ...post,
@@ -23,15 +24,26 @@ class Blog extends Component {
                 this.setState({posts: updatedPosts})
             })
     }
+
+    postSelected = (id) => {
+        this.setState({postId: id})
+    }
+
     render () {
-        const posts = this.state.posts.map(post => <Post key={post.id} title={post.title} author={post.author} />)
+        const posts = this.state.posts.map(post => {
+            return <Post 
+                key={post.id} 
+                title={post.title} 
+                author={post.author}
+                clicked={() => this.postSelected(post.id)} />
+        })
         return (
             <div>
                 <section className={classes.Posts}>
                     {posts}
                 </section>
                 <section>
-                    <PostSingle />
+                    <PostSingle id={this.state.postId} />
                 </section>
                 <section>
                     <PostNew />
